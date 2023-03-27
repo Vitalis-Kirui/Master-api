@@ -79,7 +79,7 @@ const loginUser = (req, res, next) => {
   User.findOne({ username })
     .then((user) => {
       if (!user) {
-        return res.status(401).json({ message: "Authentication failed" });
+        return res.status(401).json({ message: "User not found" });
       }
 
       // Compare the provided password with the hashed password in the database
@@ -87,7 +87,7 @@ const loginUser = (req, res, next) => {
         .compare(password, user.password)
         .then((isMatch) => {
           if (!isMatch) {
-            return res.status(401).json({ message: "Authentication failed" });
+            return res.status(401).json({ message: "Wrong password" });
           }
 
           // Create a JWT token for the authenticated user
