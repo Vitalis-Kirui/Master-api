@@ -7,6 +7,7 @@ const config = require("./config/config");
 
 // Routes
 const userroutes = require('./routes/users');
+const postroutes = require('./routes/posts');
 
 // Declaring app
 const app = express();
@@ -39,3 +40,6 @@ app.get("/", (req, res) => {
 
 // Using user routes
 app.use('/users', userroutes)
+
+// Using posts routes
+app.use('/posts', postroutes);
