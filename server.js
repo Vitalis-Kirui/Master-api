@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 
 const config = require("./config/config");
 
+// Routes
+const userroutes = require('./routes/users');
+
 // Declaring app
 const app = express();
 
@@ -33,3 +36,6 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Hello from the server");
 });
+
+// Using user routes
+app.use('/users', userroutes)
