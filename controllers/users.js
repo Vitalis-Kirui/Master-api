@@ -93,7 +93,7 @@ const loginUser = (req, res, next) => {
           // Create a JWT token for the authenticated user
           const token = jwt.sign(
             { userId: user._id, username: user.username },
-            process.config.secretword,
+            config.secretword,
             { expiresIn: "1h" }
           );
 
@@ -103,10 +103,10 @@ const loginUser = (req, res, next) => {
             expiresIn: 3600,
             user: {
               userId: user._id,
-              name: user.name,
+              name: user.names,
               username: user.username,
               email: user.email,
-              phoneNumber: user.phoneNumber,
+              phoneNumber: user.phonenumber,
               subscribe: user.subscribe,
             },
           });
@@ -124,5 +124,5 @@ const loginUser = (req, res, next) => {
 
 module.exports = {
   registerUser,
-  loginUser
+  loginUser,
 };
