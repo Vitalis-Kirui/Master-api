@@ -16,7 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// POST /posts - create a new post
+// Create a new post
 router.post('/create-post', upload.single('image'), postcontrollers.createPost);
+
+// Getting all the posts
+router.get('/all-posts', postcontrollers.getPosts);
 
 module.exports = router;

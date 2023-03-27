@@ -8,7 +8,7 @@ const commentSchema = new Schema(
       required: true,
     },
     post: {
-      type:Schema.Types.ObjectId,
+      type:mongoose.Schema.Types.ObjectId,
       ref: "Post",
       required: true,
     },
