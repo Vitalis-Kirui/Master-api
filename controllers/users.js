@@ -73,11 +73,7 @@ const registerUser = (req, res, next) => {
 
 // Login user
 const loginUser = (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-
-  console.log(username);
+  const { username, password } = req.body;
 
   // Find the user with the provided username
   User.findOne({ username })
