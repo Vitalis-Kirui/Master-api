@@ -3,25 +3,28 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
-    post: {
+    text: {
       type: String,
-      require: true,
+      required: true,
     },
     image: {
       type: String,
+      default: null,
     },
-    comments: {
-      type: [String],
-      default: [],
-    },
+    comments: [
+      {
+        type:Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
 
-const postModel = mongoose.model("Post", postSchema, "posts");
+const Post = mongoose.model("Post", postSchema, "posts");
 
 module.exports = {
-  postModel,
+  Post,
 };
