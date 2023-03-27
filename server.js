@@ -8,6 +8,7 @@ const config = require("./config/config");
 // Routes
 const userroutes = require('./routes/users');
 const postroutes = require('./routes/posts');
+const commentroutes = require('./routes/comments');
 
 // Declaring app
 const app = express();
@@ -43,3 +44,6 @@ app.use('/users', userroutes)
 
 // Using posts routes
 app.use('/posts', postroutes);
+
+// Using comment routes
+app.use('/comments', commentroutes);
