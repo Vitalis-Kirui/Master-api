@@ -1,6 +1,6 @@
-const Post = require("../models/post");
+const Post = require('../models/post');
 
-const createPost = async (req, res) => {
+const createPost = async(req, res)=> {
   const { caption } = req.body;
   let { image } = req.body;
 
@@ -20,9 +20,9 @@ const createPost = async (req, res) => {
     res.status(201).json(post);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: 'Server error' });
   }
-};
+}
 
 module.exports = { 
     createPost
