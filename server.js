@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // Connecting to the database
 mongoose
-  .connect(config.dbConnectionString)
+  .connect(config.dbconnectionstring)
   .then(() => {
     // Port number
     app.listen(3000);
