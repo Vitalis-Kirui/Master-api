@@ -34,6 +34,9 @@ mongoose
     console.log(error.message);
   });
 
+// Serve static files from the 'images' directory
+app.use('/images', express.static('images'));
+
 // Default link
 app.get("/", (req, res) => {
   res.send("Hello from the server");
