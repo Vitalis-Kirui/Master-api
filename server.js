@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const config = require("./config/config");
 
@@ -35,7 +36,7 @@ mongoose
   });
 
 // Serve static files from the 'images' directory
-app.use('/images', express.static('images'));
+app.use( express.static(path.join(__dirname, 'images')) );
 
 // Default link
 app.get("/", (req, res) => {
