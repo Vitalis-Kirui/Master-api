@@ -92,7 +92,7 @@ const loginUser = (req, res, next) => {
 
           // Create a JWT token for the authenticated user
           const token = jwt.sign(
-            { userId: user._id, username: user.username },
+            { userid: user._id, username: user.username },
             config.secretword,
             { expiresIn: "1h" }
           );
@@ -102,11 +102,11 @@ const loginUser = (req, res, next) => {
             token,
             expiresIn: 3600,
             user: {
-              userId: user._id,
+              userid: user._id,
               name: user.names,
               username: user.username,
               email: user.email,
-              phoneNumber: user.phonenumber,
+              phonenumber: user.phonenumber,
               subscribe: user.subscribe,
             },
           });
